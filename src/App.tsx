@@ -11,7 +11,7 @@ export default function App() {
   const [month, setMonth] = useState(1)
 
   useEffect(() => {
-    fetch('/data/cdip-142-2025-daily.json').then((response) => { if (!response.ok) throw new Error('Processed CDIP data file was not found. Run npm run data:cdip.'); return response.json() }).then(setDataset).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : 'Could not load data.'))
+    fetch('data/cdip-142-2025-daily.json').then((response) => { if (!response.ok) throw new Error('Processed CDIP data file was not found. Run npm run data:cdip.'); return response.json() }).then(setDataset).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : 'Could not load data.'))
   }, [])
 
   const monthDays = useMemo(() => dataset?.days.filter((day) => day.month === month) ?? [], [dataset, month])
