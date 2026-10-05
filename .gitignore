@@ -1,0 +1,5 @@
+# Local dependencies and tool caches
+node_modules/
+
+# Vite build output (built by the Pages workflow)
+dist/
